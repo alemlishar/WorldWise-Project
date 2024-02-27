@@ -8,13 +8,13 @@ import AppLayout from "./pages/AppLayout"
 import pageNotFound from "./pages/PageNotFound"
 import CityList from "./components/CityList"
 import CountryList from "./components/CountryList"
+import City from "./components/City"
 
 export default function App() {
   const [cities, setCities] = useState([])
   const [isLoading, setIsLoading] = useState()
 
   useEffect(function () {
-    console.log("data")
     async function cityFetch() {
       try {
         setIsLoading(true)
@@ -48,6 +48,8 @@ export default function App() {
               path="cities"
               element={<CityList cities={cities} isLoading={isLoading} />}
             ></Route>
+            <Route path="cities/:id" element={<City />}></Route>
+
             <Route
               path="countries"
               element={<CountryList cities={cities} isLoading={isLoading} />}

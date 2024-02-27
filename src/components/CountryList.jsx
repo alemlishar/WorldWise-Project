@@ -14,7 +14,6 @@ export default function CountryList({ cities, isLoading }) {
       return [...acc, { country: curr.country, emoji: curr.emoji }]
     else return acc
   }, [])
-  console.log(countries)
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
